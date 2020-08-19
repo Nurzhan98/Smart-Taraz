@@ -2,22 +2,34 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import SignInScreen from '../screens/SignInScreen';
 import AuthScreen from '../screens/AuthScreen';
-import Home from '../screens/Home';
+import Home from '../screens/Servives';
 import CrimeMap from '../screens/CrimeMap';
-import StreetLight from '../screens/StreetLight';
 import SafeRoutes from '../screens/SafeRoutes';
 import SafeSchools from '../screens/SafeSchools';
 import Addresses from '../screens/Addresses';
 import EmergencyCalls from '../screens/EmergencyCalls';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import CityService from '../screens/CityService';
+import News from '../screens/News';
+import ServicesCityScreen from '../screens/ServicesCityScreen';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator(); 
 
-export const HomeStack = () => {
+export const CitiesStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerTransparent: true,
+        headerRight: () => (
+          <Button transparent onPress={() => navigation.openDrawer()}>
+            <Icon name="keyboard-backspace" size={18} color="#fff"  />
+          </Button>
+        ),
+      }}
+    >
       <Stack.Screen 
         name="SignIn" 
-        component={ Home }
+        component={ ServicesCityScreen }
         options={ ({navigation}) => ({
           headerShown: false
         })}
@@ -28,13 +40,6 @@ export const HomeStack = () => {
         component={ CrimeMap }
         options={ ({navigation}) => ({
           title: 'CrimeMap'
-        })}
-      />
-      <Stack.Screen 
-        name="StreetLight" 
-        component={ StreetLight }
-        options={ ({navigation}) => ({
-          title: 'StreetLight'
         })}
       />
       <Stack.Screen 
@@ -63,6 +68,20 @@ export const HomeStack = () => {
         component={ EmergencyCalls }
         options={ ({navigation}) => ({
           title: 'EmergencyCalls'
+        })}
+      />
+      <Stack.Screen 
+        name="CityService" 
+        component={ CityService }
+        options={ ({navigation}) => ({
+          title: 'CityService'
+        })}
+      />
+      <Stack.Screen 
+        name="News" 
+        component={ News }
+        options={ ({navigation}) => ({
+          title: 'News'
         })}
       />
     </Stack.Navigator>

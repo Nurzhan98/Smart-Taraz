@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet, Image, TextInput} from 'react-native'
 import {Button} from 'native-base'
-
+import { container } from '../Styles';
 
 export default class AuthScreen extends Component {
     render() {
@@ -40,12 +40,7 @@ export default class AuthScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#1C9CD8',
-      flex: 1,
-      paddingHorizontal: 30,
-      paddingVertical: 20
-    },
+    container,
     titleWrap:{
         marginTop: 30,
         alignItems: 'center',

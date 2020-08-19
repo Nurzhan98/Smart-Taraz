@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
-import {Image, View, StyleSheet, Text, TextInput} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Button} from 'react-native-paper'
-
+import {Image, View, StyleSheet} from 'react-native'
+import { container } from '../Styles';
+import HeaderBack from '../components/HeaderBack';
 
 export default class CrimeMap extends Component {
     render() {
+        const { navigation }= this.props
         return (
             <View style={styles.container} >
-                <Button transparent style={styles.backIcon} >
-                    <Icon  name='keyboard-backspace' size={20} color='#fff' />
-                </Button>
-                <Text style={styles.titleText} >Карта преступности</Text>
+                <HeaderBack title='Карта преступности' navigation={navigation} />
                 <View style={styles.imgContainer} >
                     <Image style={styles.img} source={require('../assets/img/map.png')} />
                 </View>
@@ -21,17 +18,19 @@ export default class CrimeMap extends Component {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#09104C',
-        flex: 1,
-        paddingHorizontal: 20,
-        paddingVertical: 30,
+    container,
+    titleWrap:{
+        backgroundColor: '#fff',
+        marginTop: 30,
+        width: '100%',
+        height: 35,
+        flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 10
+        borderRadius: 10,
+        justifyContent: 'space-between'
     },
     titleText: {
-        color: "#fff",
-        marginTop: 30,
+        color: "#000",
         fontWeight: "700",
         fontSize: 20
     },
@@ -45,8 +44,8 @@ const styles = StyleSheet.create({
         height: '90%'
     },
     backIcon: {
-        position: 'absolute',
-        top: 10,
-        right: 20
+    },
+    iconContainer: {
+        alignSelf: 'flex-end',
     }
 })

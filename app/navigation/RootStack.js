@@ -1,11 +1,8 @@
 import React, {Component} from "react";
-import { createStackNavigator } from "@react-navigation/stack";
 import  {DrawerStack}  from "./DrawerStack";
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthStack } from "./AuthStack";
 import { connect } from 'react-redux';
-import {ActivityIndicator} from 'react-native'
-import { View } from "native-base";
 import Loader from "../components/Loader";
 
 
@@ -27,9 +24,7 @@ class  RootStackScreen extends Component {
     return (
       <NavigationContainer>
         {stack} 
-        {/* {loader} */}
       </NavigationContainer>
-      // {loader}
     )
   }
 }

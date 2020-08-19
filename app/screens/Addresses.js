@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Image, View, StyleSheet, Text, TextInput, Button} from 'react-native'
-
+import {View, StyleSheet, Text} from 'react-native'
+import { container } from '../Styles';
 
 export default class Addresses extends Component {
     render() {
@@ -13,10 +13,5 @@ export default class Addresses extends Component {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#09104C',
-        flex: 1,
-        paddingHorizontal: 20,
-        paddingVertical: 30
-    },
+    container
 })

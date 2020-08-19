@@ -1,86 +1,50 @@
 import React, {useContext, Component} from 'react'
-import {Image, View, StyleSheet, Text, TextInput, Button} from 'react-native'
-// import { FontAwesome, Entypo } from '@expo/vector-icons';
-// import {AuthContext} from '../context'
-
-
-export default class ServicesCityScreen extends Component {
+import {Image, View, StyleSheet, Text, TouchableOpacity, TouchableNativeFeedback} from 'react-native'
+import { connect } from 'react-redux';
+import {signOut} from '../reducers/actions'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { List } from 'react-native-paper';
+import { Accordion } from "native-base";
+import { ScrollView } from 'react-native-gesture-handler';
+import HeaderTitle from '../components/HeaderTitle';
+import ListScreens from '../components/ListScreens';
+import { container } from '../Styles';
+ 
+class ServicesCityScreen extends Component {
     render() {
-        // const { signOut } = useContext(AuthContext)
-        return (
+        const secureCity = [
+            {title: 'Карта преступности', screen: 'CrimeMap'},
+            {title: 'Безопасные маршруты', screen: 'SafeRoutes'},
+            {title: 'Безопасные школы', screen: 'SafeSchools'}, 
+            {title: 'Экстренные вызовы', screen: 'EmergencyCalls'},
+        ]
+        const {navigation} = this.props
+        return ( 
             <View style={styles.container} >
-                {/* <View style={styles.headerImage} >
-                    <Image style={styles.img} source={require('../../assets/icons/image.png')} />
-                    <Image style={styles.img}  source={require('../../assets/icons/image1.png')} />
-                </View>
-                <View style={styles.titleWrap} >
-                    <Entypo name="menu" size={24} onPress={() => navigation.toggleDrawer()} color="#fff" />
-                    <Text style={styles.title} >TARAZ CITY</Text>
-                </View>
-                <View>
-                    <Text style={{color: '#fff', fontSize: 30}} >ServicesCityScreen</Text>
-                    <Button title='Выйти' onPress={() => signOut()} />
-                </View> */}
+                <ScrollView>
+                    <HeaderTitle title='Безопасный город' />
+                    <ListScreens data={secureCity} navigation={navigation} />
+                </ScrollView>
             </View>
         )
     }
 };
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#09104C',
-        flex: 1,
-        paddingHorizontal: 20,
-        paddingVertical: 30
-    },
-    headerImage:{
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
-    img: {
-        width: 80,
-        height: 80
-    },
-    title: {
-        fontFamily: 'roboto-bold',
-        color: '#F8F8F8',
-        fontSize: 30
-    },
-    titleWrap: {
-        alignItems: 'center',
-        marginTop: 40,
-        marginBottom: 20
-    },
-    signWrap: {
-        paddingHorizontal: 15,
-    },
-    inputWrap: {
-        flexDirection: 'row',
-        height: 25,
-        alignItems: 'center',
-        backgroundColor: '#F2F2F2',
-        paddingHorizontal: 10,
-        marginBottom: 20
-    },
-    input: {
-        marginLeft: 10
-    },
-    btnWrap: {
-        marginBottom: 20
-    },
-    btnsWrap: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 20
-    },
-    btnWrap2: {
-        width: '40%'
-    },
-    bottomWrap: {
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    },
-    bottomText: {
-        color: '#FFFFFF'
-    }
+    container
 })
+
+const mapStateToProps = (state) => {
+    // console.log(state.authReducer);
+    return {
+      userToken: state.authReducer.userToken
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      signOut: (token) => dispatch(signOut(token))
+    }
+  }
+  
+export default connect(mapStateToProps, mapDispatchToProps)(ServicesCityScreen);

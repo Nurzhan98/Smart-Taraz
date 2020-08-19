@@ -14,8 +14,6 @@ import {
     DrawerContentScrollView,
     DrawerItem
 } from '@react-navigation/drawer';
-// import { connect } from 'react-redux';
-// import { signOut } from '../reducers/actions'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 import {signOut} from '../reducers/actions'
@@ -36,7 +34,7 @@ class DrawerContent extends Component  {
                                     size={50}
                                 />
                                 <View style={{marginLeft:15, flexDirection:'column'}}>
-                                    <Title style={styles.title}>User Name</Title>
+                                    <Title style={styles.title}>Шинибаев Нуржан</Title>
                                     <Caption style={styles.caption}>example@mail.ru</Caption>
                                 </View>
                             </View>
@@ -50,8 +48,8 @@ class DrawerContent extends Component  {
                                     size={size}
                                     />
                                 )}
-                                label="Home"
-                                onPress={() => navigation.navigate('Home')} 
+                                label="Безопасный город"
+                                onPress={() => navigation.navigate('CitiesStack')} 
                             />
                             <DrawerItem 
                                 icon={({color, size}) => (
@@ -61,41 +59,8 @@ class DrawerContent extends Component  {
                                     size={size}
                                     />
                                 )}
-                                label="Profile"
-                                onPress={() => navigation.navigate('ServicesCityScreen')} 
-                            />
-                            <DrawerItem 
-                                icon={({color, size}) => (
-                                    <Icon 
-                                    name="bookmark-outline" 
-                                    color={color}
-                                    size={size}
-                                    />
-                                )}
-                                label="Bookmarks"
-                                
-                            />
-                            <DrawerItem 
-                                icon={({color, size}) => (
-                                    <Icon 
-                                    name="cog-outline" 
-                                    color={color}
-                                    size={size}
-                                    />
-                                )}
-                                label="Settings"
-                                
-                            />
-                            <DrawerItem 
-                                icon={({color, size}) => (
-                                    <Icon 
-                                    name="account-check-outline" 
-                                    color={color}
-                                    size={size}
-                                    />
-                                )}
-                                label="Support"
-                                
+                                label="Услуги"
+                                onPress={() => navigation.navigate('Services')} 
                             />
                         </Drawer.Section>
                     </View>
@@ -109,7 +74,7 @@ class DrawerContent extends Component  {
                             size={size}
                             />
                         )}
-                        label="Sign Out"
+                        label="Выйти"
                         onPress={() => this.props.signOut(null)}
                     />
                 </Drawer.Section>

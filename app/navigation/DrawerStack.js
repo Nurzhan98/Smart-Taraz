@@ -1,21 +1,17 @@
-import { DrawerItem, createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from "react";
-import { Image, StyleSheet, View } from 'react-native';
+import {  StyleSheet } from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Animated from 'react-native-reanimated';
-import Home from '../screens/Home';
-import ServicesCityScreen from '../screens/ServicesCityScreen';
 import DrawerContent from '../screens/DrawerContent';
-import { connect } from 'react-redux';
-import {signOut} from '../reducers/actions'
 import { Button, Text, Block } from 'react-native-paper'
-import { HomeStack } from './HomeStack';
+import { CitiesStack } from './CitiesStack';
+import { ServicesStack } from './ServicesStack';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator()
 
-const Screens = ({ navigation, style }) => {
+const Screens = ({ navigation, style}) => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -29,8 +25,8 @@ const Screens = ({ navigation, style }) => {
           </Button>
         ),
       }}>
-      <Stack.Screen name="Home">{props => <HomeStack {...props} />}</Stack.Screen>
-      <Stack.Screen name="ServicesCityScreen">{props => <ServicesCityScreen {...props} />}</Stack.Screen>
+      <Stack.Screen name="CitiesStack">{props => <CitiesStack  {...props} />}</Stack.Screen>
+      <Stack.Screen name="Services">{props => <ServicesStack {...props} />}</Stack.Screen>
     </Stack.Navigator>
   );
 };
