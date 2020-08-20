@@ -1,8 +1,5 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import SignInScreen from '../screens/SignInScreen';
-import AuthScreen from '../screens/AuthScreen';
-import Home from '../screens/Servives';
 import CrimeMap from '../screens/CrimeMap';
 import SafeRoutes from '../screens/SafeRoutes';
 import SafeSchools from '../screens/SafeSchools';

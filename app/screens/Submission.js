@@ -3,7 +3,7 @@ import {View, StyleSheet, Text} from 'react-native'
 import { Textarea } from 'native-base';
 import { Button} from 'react-native-paper'
 import HeaderBack from '../components/HeaderBack';
-import { container } from '../Styles';
+import { container } from '../styles/styles';
 
 export default class Submission extends Component {
     render() {

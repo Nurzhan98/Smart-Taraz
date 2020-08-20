@@ -1,20 +1,20 @@
-import React, {useContext, Component} from 'react'
-import {Image, View, StyleSheet, Text, TouchableOpacity, TouchableNativeFeedback} from 'react-native'
-import { connect } from 'react-redux';
-import {signOut} from '../reducers/actions'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { List } from 'react-native-paper';
-import { Accordion } from "native-base";
+import React, { Component } from 'react'
+import { View, StyleSheet } from 'react-native'
+import { Button } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 import HeaderTitle from '../components/HeaderTitle';
 import ListScreens from '../components/ListScreens';
-import { container } from '../Styles';
- 
-class ServicesCityScreen extends Component {
+import { container } from '../styles/styles';
+import { observer } from 'mobx-react' 
+import { observable } from 'mobx'
+
+
+
+@observer export default class ServicesCityScreen extends Component {
     render() {
         const secureCity = [
             {title: 'Карта преступности', screen: 'CrimeMap'},
-            {title: 'Безопасные маршруты', screen: 'SafeRoutes'},
+            {title: 'Безопасные маршруты', screen: 'SafeRoutes'},  
             {title: 'Безопасные школы', screen: 'SafeSchools'}, 
             {title: 'Экстренные вызовы', screen: 'EmergencyCalls'},
         ]
@@ -23,8 +23,14 @@ class ServicesCityScreen extends Component {
             <View style={styles.container} >
                 <ScrollView>
                     <HeaderTitle title='Безопасный город' />
+                    {/* <HeaderTitle title={counterState.count} /> */}
                     <ListScreens data={secureCity} navigation={navigation} />
                 </ScrollView>
+                <Button
+                
+                >
+                  click
+                </Button>
             </View>
         )
     }
@@ -33,18 +39,3 @@ class ServicesCityScreen extends Component {
 const styles = StyleSheet.create({
     container
 })
-
-const mapStateToProps = (state) => {
-    // console.log(state.authReducer);
-    return {
-      userToken: state.authReducer.userToken
-    }
-  }
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      signOut: (token) => dispatch(signOut(token))
-    }
-  }
-  
-export default connect(mapStateToProps, mapDispatchToProps)(ServicesCityScreen);

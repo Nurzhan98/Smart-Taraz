@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {View, StyleSheet, Text} from 'react-native'
-import { container } from '../Styles';
+import { container } from '../styles/styles';
 
 export default class Addresses extends Component {
     render() {

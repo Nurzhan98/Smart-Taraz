@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import {Image, View, StyleSheet, Text, TextInput} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Button} from 'react-native-paper'
+import { View, StyleSheet, Text} from 'react-native'
 import HeaderBack from '../components/HeaderBack';
-import { container } from '../Styles';
+import { container } from '../styles/styles';
 
 export default class CityService extends Component {
     render() {

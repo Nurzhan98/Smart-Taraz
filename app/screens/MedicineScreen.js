@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import {View, StyleSheet} from 'react-native'
-import { connect } from 'react-redux';
-import {signOut} from '../reducers/actions'
 import HeaderBack from '../components/HeaderBack';
 import ListScreens from '../components/ListScreens';
-import { container } from '../Styles';
+import { container } from '../styles/styles';
  
-class MedicineScreen extends Component {
+export default class MedicineScreen extends Component {
     render() {
         const dataArray = [ 
             { title: "ОСМС", content: "Lorem ipsum dolor sit amet", screen: 'CityService' },
@@ -27,17 +25,3 @@ class MedicineScreen extends Component {
 const styles = StyleSheet.create({
     container
 })
-
-const mapStateToProps = (state) => {
-    return {
-      userToken: state.authReducer.userToken
-    }
-  }
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      signOut: (token) => dispatch(signOut(token))
-    }
-  }
-  
-export default connect(mapStateToProps, mapDispatchToProps)(MedicineScreen);

@@ -2,19 +2,22 @@
  * @format
  */
 import React from 'react'
-import {AppRegistry} from 'react-native';
+import {AppRegistry, YellowBox} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
-import { Provider } from 'react-redux';
+YellowBox.ignoreWarnings([
+    'Warning: componentWillMount',
+    'Warning: componentWillReceiveProps',
+    '-[RCTRootView cancelTouches]',
+    'Warning: componentWillUpdate',
+    'Invalid prop `text` of type `object`',
+    'Warning: DatePickerIOS has been merged',
+    'Calling bridge.imageLoader is deprecated',
+    '[react-native-modalize] `withReactModal`',
+    'Remote debugger is in a background tab',
+    'VirtualizedLists should never be nested',
+  ]);
+  
 
-import configureStore from './app/store/store'
 
-const store = configureStore();
-
-const ReduxContainer = () => 
-    <Provider store={store}>
-        <App />
-    </Provider>
-
-
-AppRegistry.registerComponent(appName, () => ReduxContainer);
+AppRegistry.registerComponent(appName, () => App);

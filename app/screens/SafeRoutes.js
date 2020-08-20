@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Image, View, StyleSheet } from 'react-native'
-import { container } from '../Styles';
+import { container } from '../styles/styles';
 import HeaderBack from '../components/HeaderBack';
 
 export default class SafeRoutes extends Component {

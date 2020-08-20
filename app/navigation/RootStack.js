@@ -1,41 +1,40 @@
 import React, {Component} from "react";
 import  {DrawerStack}  from "./DrawerStack";
+import  {AuthStack}  from "./AuthStack";
+
 import { NavigationContainer } from '@react-navigation/native';
-import { AuthStack } from "./AuthStack";
-import { connect } from 'react-redux';
 import Loader from "../components/Loader";
+import { observer, inject } from 'mobx-react'
 
-
-class  RootStackScreen extends Component {
+@inject('store')
+@observer
+export default class  RootStackScreen extends Component {
   state = {
-    visible: true
+    visible: true,
+    loading: false
   }
+  componentDidMount() {
+    this.setState({loading: false})
+  }
+
   render() {
-    const {visible} = this.state
-    let userToken = this.props.userToken
+    const {visible, loading} = this.state
+    const { userToken } = this.props.store
     let stack = <AuthStack />
-    let loader
     if(userToken) {
       stack = <DrawerStack />
-      loader = <Loader />
-      setTimeout(() => loader = null, 1000)
     }
     console.log(userToken) 
     return (
       <NavigationContainer>
-        {stack} 
+        {stack}
+        {
+          loading && <Loader />
+        }
       </NavigationContainer>
     )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    userToken: state.authReducer.userToken
-  }
-}
-
-export default connect(mapStateToProps)(RootStackScreen);
 
     
     

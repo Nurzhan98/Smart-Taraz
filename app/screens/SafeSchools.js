@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Image, View, StyleSheet, Text, TextInput} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { container } from '../Styles';
+import { container } from '../styles/styles';
 import HeaderBack from '../components/HeaderBack';
 
 export default class SafeSchools extends Component {

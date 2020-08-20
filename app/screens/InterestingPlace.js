@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Image, View, StyleSheet, Text, TextInput} from 'react-native'
+import {Image, View, StyleSheet } from 'react-native'
 import HeaderBack from '../components/HeaderBack';
-import { container } from '../Styles';
+import { container } from '../styles/styles';
 
 export default class InterestingPlace extends Component {
     render() {

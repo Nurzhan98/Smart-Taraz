@@ -1,23 +1,23 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet, Image, TextInput, Button} from 'react-native'
 import { Icon } from 'native-base';
-import { connect } from 'react-redux';
-import {signIn} from '../reducers/actions'
+import { observer, inject } from 'mobx-react'
 
-class SignInScreen extends Component {
-    login = () => {
-        this.props.signIn('123456');
-    }
+@inject('store')
+@observer
+export default class SignInScreen extends Component {
     render() {
-        const {navigation, userToken} = this.props
+        const {navigation} = this.props
+        const { userToken, setToken } = this.props.store
         console.log(navigation)
         navigation.setOptions={
             title: 'Регистрация'
         }
+        console.log(userToken)
         return (
             <View style={styles.container} >
                 <View  style={styles.titleWrap} >
-                    <Text  style={styles.title}>TARAZ CITY</Text>
+                    <Text  style={styles.title}> Smart Taraz </Text>
                 </View>
                 <View  style={styles.formWrap}>
                    <View  style={styles.inputWrap} >
@@ -28,9 +28,9 @@ class SignInScreen extends Component {
                         <Image style={styles.inputIcons} source={require('../assets/icons/clock.png')} />
                         <TextInput placeholder='Введите пароль'  style={styles.inputs} />
                    </View>
-                   <Button onPress={this.login} style={styles.btnSignIn}  color='#1FA554'  title='Войти' />
+                   <Button  style={styles.btnSignIn} onPress={() => setToken('aeae')}  color='#1FA554'  title='Войти' />
                    <View  style={styles.btnWrap} >
-                       <View style={styles.authorizationBtn}><Button onPress={() => navigation.navigate('Auth')} color='#ED7D31' title='Регистрация' /></View>
+                       <View style={styles.authorizationBtn}><Button  color='#ED7D31' title='Регистрация' /></View>
                        <View style={styles.authorizationBtn}><Button  style={styles.forgotBtn} title='Забыли пароль' /></View>
                    </View>
                 </View>
@@ -98,18 +98,3 @@ const styles = StyleSheet.create({
         color: '#fff'
     }
 });
-
-const mapStateToProps = (state) => {
-    // console.log(state.authReducer);
-    return {
-      userToken: state.authReducer.userToken
-    }
-  }
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      signIn: (token) => dispatch(signIn(token))
-    }
-  }
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(SignInScreen);

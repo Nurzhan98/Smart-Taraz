@@ -1,26 +1,16 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import {
-    Avatar,
-    Title,
-    Caption,
-    Paragraph,
-    Drawer,
-    Text,
-    TouchableRipple,
-    Switch
-} from 'react-native-paper';
-import {
-    DrawerContentScrollView,
-    DrawerItem
-} from '@react-navigation/drawer';
+import { Avatar, Title, Caption, Drawer } from 'react-native-paper';
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { connect } from 'react-redux';
-import {signOut} from '../reducers/actions'
+import { observer, inject } from 'mobx-react'
 
-class DrawerContent extends Component  {
+@inject('store')
+@observer
+export default class DrawerContent extends Component  {
     render() {
         const {navigation} = this.props
+        const { setToken } = this.props.store
         return( 
             <View style={{flex:1}}>
                 <DrawerContentScrollView {...this.props}  scrollEnabled={false} contentContainerStyle={{ flex: 1 }} >
@@ -75,7 +65,7 @@ class DrawerContent extends Component  {
                             />
                         )}
                         label="Выйти"
-                        onPress={() => this.props.signOut(null)}
+                        onPress={() => setToken(null)}
                     />
                 </Drawer.Section>
             </View>
@@ -128,19 +118,3 @@ const styles = StyleSheet.create({
       paddingHorizontal: 16,
     },
   });
-
-
-const mapStateToProps = (state) => {
-// console.log(state.authReducer);
-return {
-    userToken: state.authReducer.userToken
-}
-}
-
-const mapDispatchToProps = (dispatch) => {
-return {
-    signOut: (token) => dispatch(signOut(token))
-}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DrawerContent);

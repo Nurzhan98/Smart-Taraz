@@ -1,12 +1,10 @@
 import React, { Component} from 'react'
-import {Image, View, StyleSheet} from 'react-native'
-import { connect } from 'react-redux';
-import {signOut} from '../reducers/actions'
+import { View, StyleSheet} from 'react-native'
 import HeaderBack from '../components/HeaderBack';
 import ListScreens from '../components/ListScreens';
-import { container } from '../Styles';
+import { container } from '../styles/styles';
  
-class DosugService extends Component {
+export default class DosugService extends Component {
     render() {
         const dataArray = [ 
             { title: "Интересные места", content: "Lorem ipsum dolor sit amet", screen: 'InterestingPlace' },
@@ -25,18 +23,3 @@ class DosugService extends Component {
 const styles = StyleSheet.create({
     container
 })
-
-const mapStateToProps = (state) => {
-    // console.log(state.authReducer);
-    return {
-      userToken: state.authReducer.userToken
-    }
-  }
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      signOut: (token) => dispatch(signOut(token))
-    }
-  }
-  
-export default connect(mapStateToProps, mapDispatchToProps)(DosugService);

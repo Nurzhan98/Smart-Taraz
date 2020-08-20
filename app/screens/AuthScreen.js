@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet, Image, TextInput} from 'react-native'
 import {Button} from 'native-base'
-import { container } from '../Styles';
+import { container } from '../styles/styles';
 
 export default class AuthScreen extends Component {
     render() {
