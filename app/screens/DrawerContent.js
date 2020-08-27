@@ -4,10 +4,22 @@ import { Avatar, Title, Caption, Drawer } from 'react-native-paper';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { observer, inject } from 'mobx-react'
+import AsyncStorage from '@react-native-community/async-storage';
 
 @inject('store')
 @observer
 export default class DrawerContent extends Component  {
+
+    logOut = async () => {
+        const { setToken } = this.props.store
+        try {
+            await AsyncStorage.clear()
+            setToken(null)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     render() {
         const {navigation} = this.props
         const { setToken } = this.props.store
@@ -65,7 +77,7 @@ export default class DrawerContent extends Component  {
                             />
                         )}
                         label="Выйти"
-                        onPress={() => setToken(null)}
+                        onPress={this.logOut}
                     />
                 </Drawer.Section>
             </View>

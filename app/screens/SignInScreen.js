@@ -9,11 +9,9 @@ export default class SignInScreen extends Component {
     render() {
         const {navigation} = this.props
         const { userToken, setToken } = this.props.store
-        console.log(navigation)
         navigation.setOptions={
             title: 'Регистрация'
         }
-        console.log(userToken)
         return (
             <View style={styles.container} >
                 <View  style={styles.titleWrap} >
@@ -30,7 +28,7 @@ export default class SignInScreen extends Component {
                    </View>
                    <Button  style={styles.btnSignIn} onPress={() => setToken('aeae')}  color='#1FA554'  title='Войти' />
                    <View  style={styles.btnWrap} >
-                       <View style={styles.authorizationBtn}><Button  color='#ED7D31' title='Регистрация' /></View>
+                       <View style={styles.authorizationBtn}><Button onPress={() => navigation.navigate('Auth')}  color='#ED7D31' title='Регистрация' /></View>
                        <View style={styles.authorizationBtn}><Button  style={styles.forgotBtn} title='Забыли пароль' /></View>
                    </View>
                 </View>
