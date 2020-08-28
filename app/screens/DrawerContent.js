@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { observer, inject } from 'mobx-react'
 import AsyncStorage from '@react-native-community/async-storage';
 
+Icon.loadFont()
 @inject('store')
 @observer
 export default class DrawerContent extends Component  {

@@ -8,6 +8,8 @@ import { Button, Text, Block } from 'react-native-paper'
 import { CitiesStack } from './CitiesStack';
 import { ServicesStack } from './ServicesStack';
 
+Icon.loadFont()
+
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator()
 

@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { container } from '../styles/styles';
 import HeaderBack from '../components/HeaderBack';
 
+Icon.loadFont()
 export default class SafeSchools extends Component {
     render() {
         const { navigation }= this.props

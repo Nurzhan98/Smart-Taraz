@@ -7,6 +7,9 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { observer, inject } from 'mobx-react'
 import { userData } from '../models/usersData';
 
+Ionicons.loadFont()
+Feather.loadFont()
+
 @inject('store')
 @observer
 export default class AppLockScreen extends Component {

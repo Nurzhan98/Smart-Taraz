@@ -3,6 +3,7 @@ import {View, StyleSheet, Text, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { ScrollView } from 'react-native-gesture-handler';
  
+Icon.loadFont()
 export default class ListScreens extends Component {
     render() {  
         const {navigation, data} = this.props  

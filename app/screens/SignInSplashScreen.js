@@ -16,6 +16,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { userData } from '../models/usersData';
 import { observer, inject } from 'mobx-react'
 
+FontAwesome.loadFont()
+Feather.loadFont()
 
 @inject('store')
 @observer
