@@ -10,6 +10,8 @@ import CityService from '../screens/CityService';
 import News from '../screens/News';
 import ServicesCityScreen from '../screens/ServicesCityScreen';
 
+Icon.loadFont()
+
 const Stack = createStackNavigator(); 
 
 export const CitiesStack = () => {

@@ -8,6 +8,9 @@ import { observer, inject } from 'mobx-react'
 import { userData } from '../models/usersData';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
+Ionicons.loadFont()
+Feather.loadFont()
+
 @inject('store')
 @observer
 export default class AppLockScreen extends Component {

@@ -3,6 +3,7 @@ import  {StyleSheet, View, Text} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Button} from 'react-native-paper'
 
+Icon.loadFont()
 
 export default class HeaderBack extends Component {
     render() {

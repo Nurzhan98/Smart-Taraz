@@ -11,6 +11,8 @@ import Submission from '../screens/Submission';
 import { DosugStack } from './DosugStack';
 import { MedicineStack } from './MedicineStack';
 
+Icon.loadFont()
+
 const Stack = createStackNavigator(); 
 
 export const ServicesStack = () => {
