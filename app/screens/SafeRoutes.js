@@ -8,7 +8,7 @@ export default class SafeRoutes extends Component {
         const { navigation }= this.props
         return (
             <View style={styles.container} >
-                <HeaderBack title='Безопасные маршруты город' navigation={navigation} />
+                <HeaderBack title='Безопасные маршруты' navigation={navigation} />
                 <View style={styles.imgContainer} >
                     <Image  resizeMode='contain' style={styles.img} source={require('../assets/img/image18.png')} />
                 </View>

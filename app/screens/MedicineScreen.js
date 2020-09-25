@@ -7,12 +7,12 @@ import { container } from '../styles/styles';
 export default class MedicineScreen extends Component {
     render() {
         const dataArray = [ 
-            { title: "ОСМС", content: "Lorem ipsum dolor sit amet", screen: 'CityService' },
-            { title: "Льготная категория", content: "Lorem ipsum dolor sit amet", screen: 'News' },
-            { title: "Мед организация", content: "Lorem ipsum dolor sit amet", screen: 'News' },
+            // { title: "ОСМС", content: "Lorem ipsum dolor sit amet", screen: 'CityService' },
+            { title: "Льготная категория", content: "Lorem ipsum dolor sit amet", screen: 'MedCategory' },
+            { title: "Мед организация", content: "Lorem ipsum dolor sit amet", screen: 'MedOrganization' },
         ];
         const {navigation} = this.props  
-        const {activeIndex} = this.state
+        // const {activeIndex} = this.state
         return ( 
             <View style={styles.container} >
                 <HeaderBack title='Медицина' navigation={navigation} />

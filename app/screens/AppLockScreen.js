@@ -6,6 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AsyncStorage from '@react-native-community/async-storage';
 import { observer, inject } from 'mobx-react'
 import { userData } from '../models/usersData';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 @inject('store')
 @observer
@@ -33,26 +34,7 @@ export default class AppLockScreen extends Component {
         _asyncStorage()
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     const {lockPassword, confirmLockPassword} = this.state
-    //     const {setToken} = this.props.store
-    //     const {token} = userData
-    //     let equally
-    //     // if(isValidPassword) {
-    //     //     this._asyncToken()
-    //     //     setToken(token)
-    //     // }
-    //     console.log('test')
-    //     if(prevState.confirmLockPassword !== this.state.confirmLockPassword){
-            
-    //         if(lockPassword.length === 4 && confirmLockPassword.length === 4) {
-    //             console.log('isValid')
-    //             lockPassword.forEach( (val, i) => {
-    //                 if(val === confirmLockPassword[i]) this.setState({isValidPassword: true}, () => console.log(this.state.isValidPassword))
-    //             })
-    //         }
-    //     }
-    // }
+    
 
     _asyncStorage = async () => {
         const {lockPassword, confirmLockPassword} = this.state
@@ -140,10 +122,10 @@ export default class AppLockScreen extends Component {
         return (
             <View style={styles.container} >
                 <View style={styles.wrapperImg} >
-                    <Avatar.Image size={90} source={require('../assets/img/user.jpg')} />
+                    <FontAwesome name='user' size={90} />
                     <View style={styles.imgTextWrap} >
-                        <Text style={styles.imgText}>Нуржан,</Text>
-                        <Text style={styles.imgText}>Здравствуйте</Text>
+                        <Text style={styles.imgText}>User,</Text> 
+                        <Text style={styles.imgText}>Здравствуйте</Text> 
                     </View>
                 </View>
                 <View style={styles.inputWrap}>
@@ -295,7 +277,9 @@ const styles = StyleSheet.create({
         
     },
     wrapperImg: {
-        marginTop: 40
+        marginTop: 40,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     img: {
         flex: 1,

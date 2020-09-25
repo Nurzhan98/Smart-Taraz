@@ -65,14 +65,18 @@ export default class SignInSplashScreen extends Component {
         })
     }
 
-    handleLogin = () => {
+    handleLogin = async () => {
         const { setToken } = this.props.store
         const { navigation } = this.props
         const {name, password, token} = userData
         const {userName, userPassword} = this.state.user
         if(name == userName && password == userPassword) { 
-            // setToken(token) 
-            navigation.navigate('AppLockScreen')
+            try {
+                await AsyncStorage.setItem('token', token)
+                navigation.navigate('AppLockScreen')
+            } catch (error) {
+                console.log(error)
+            }
         } else {
             Alert.alert(
                 "Не удалось войти.",

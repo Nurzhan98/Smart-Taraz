@@ -9,13 +9,12 @@ export default class HeaderBack extends Component {
         const {title, navigation} = this.props
         return (
             <View style={styles.titleWrap} >
-                <View></View>
-                <Text style={styles.titleText} > {title} </Text>
                 <Button 
                     onPress={() => navigation.goBack() }
                     color='transparent' >
                     <Icon color='#000' size={20} name='keyboard-backspace' />
                 </Button>
+                <Text style={styles.titleText} > {title} </Text>
             </View>
         )
     }
@@ -35,6 +34,5 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 10,
-        justifyContent: 'space-between'
     },
 })

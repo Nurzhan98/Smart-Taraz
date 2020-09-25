@@ -16,7 +16,7 @@ export default class CityService extends Component {
                             <Text style={styles.indexNumber, {color: '#FF654A'}}> 66 458 </Text>
                         </View>
                         <View  style={styles.indexCount} >
-                            <Text style={styles.indexTitle} >Закрыта</Text>
+                            <Text style={styles.indexTitle} >Закрыто</Text>
                             <Text style={styles.indexNumber, {color: '#0DA22C'}}> 65 838 </Text>
                         </View>
                         <View  style={styles.indexCount} >
@@ -38,8 +38,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >COVID-19</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '90%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '100%'}}>
+                                        <Text style={styles.topTensCount}>30000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -48,8 +48,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >ЭЛЕКТРОСНАБЖЕНИЕ ГОРОДА</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '80%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '95%'}}>
+                                        <Text style={styles.topTensCount}>29500</Text>
                                     </View>
                                 </View>
                             </View>
@@ -58,8 +58,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >ОБЩЕСТВЕННОЕ РАЗВИТИЕ</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '70%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '90%'}}>
+                                        <Text style={styles.topTensCount}>29000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -68,8 +68,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >ВОДОСНАБЖЕНИЕ ГОРОДА </Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '60%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '85%'}}>
+                                        <Text style={styles.topTensCount}>28000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -78,8 +78,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >ДОРОЖНАЯ ИНФРАСТРУКТУРА</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '75%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '80%'}}>
+                                        <Text style={styles.topTensCount}>27000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -88,8 +88,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >ЗАНЯТОСТЬ И СОЦИАЛЬНАЯ ЗАЩИТА </Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '85%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '75%'}}>
+                                        <Text style={styles.topTensCount}>26000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -98,8 +98,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >ТЕПЛОСНАБЖЕНИЕ МЖД</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '55%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '70%'}}>
+                                        <Text style={styles.topTensCount}>25000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -108,8 +108,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >УЛИЧНОЕ ОСВЕЩЕНИЕ</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '45%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '65%'}}>
+                                        <Text style={styles.topTensCount}>24000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -118,8 +118,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >ОБЩЕСТВЕННЫЙ ТРАНСПОРТ</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '58%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '60%'}}>
+                                        <Text style={styles.topTensCount}>23000</Text>
                                     </View>
                                 </View>
                             </View>
@@ -128,8 +128,8 @@ export default class CityService extends Component {
                                     <Text style={styles.topTensName} >КОЛОДЕЦ, ЛЮК</Text>
                                 </View>
                                 <View style={styles.topTensCounts}>
-                                    <View style={{...styles.topTensCountWrap, width: '90%'}}>
-                                        <Text style={styles.topTensCount}>32367</Text>
+                                    <View style={{...styles.topTensCountWrap, width: '50%'}}>
+                                        <Text style={styles.topTensCount}>22000</Text>
                                     </View>
                                 </View>
                             </View>

@@ -5,6 +5,10 @@ import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { observer, inject } from 'mobx-react'
 import AsyncStorage from '@react-native-community/async-storage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Entypo from 'react-native-vector-icons/Entypo';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 
 @inject('store')
 @observer
@@ -29,23 +33,18 @@ export default class DrawerContent extends Component  {
                     <View style={styles.drawerContent}>
                         <View style={styles.userInfoSection}>
                             <View style={{flexDirection:'row',marginTop: 15}}>
-                                <Avatar.Image 
-                                    source={{
-                                        uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
-                                    }}
-                                    size={50}
-                                />
+                                <FontAwesome name='user' size={50} />
                                 <View style={{marginLeft:15, flexDirection:'column'}}>
-                                    <Title style={styles.title}>Шинибаев Нуржан</Title>
-                                    <Caption style={styles.caption}>example@mail.ru</Caption>
+                                    <Title style={styles.title}>Фамилия Имя</Title>
+                                    <Caption style={styles.caption}>user@aikey.kz</Caption>
                                 </View>
                             </View>
                         </View>
                         <Drawer.Section style={styles.drawerSection}>
                             <DrawerItem 
                                 icon={({color, size}) => (
-                                    <Icon 
-                                    name="home-outline" 
+                                    <Entypo 
+                                    name="shield" 
                                     color={color}
                                     size={size}
                                     />
@@ -55,10 +54,10 @@ export default class DrawerContent extends Component  {
                             />
                             <DrawerItem 
                                 icon={({color, size}) => (
-                                    <Icon 
-                                    name="account-outline" 
+                                    <AntDesign
+                                    name="customerservice" 
                                     color={color}
-                                    size={size}
+                                    size={size}   
                                     />
                                 )}
                                 label="Услуги"

@@ -26,11 +26,6 @@ import { observable } from 'mobx'
                     {/* <HeaderTitle title={counterState.count} /> */}
                     <ListScreens data={secureCity} navigation={navigation} />
                 </ScrollView>
-                <Button
-                
-                >
-                  click
-                </Button>
             </View>
         )
     }

@@ -12,18 +12,18 @@ export default class EmergencyCalls extends Component {
                 <View style={styles.lists} >
                     <View style={styles.listWrap}>
                         <Text style={styles.listText} > 
-                            1406 
+                            101
                          </Text>
                         <Text style={styles.listText}>
-                            Call-центр ФОМС
-                        </Text>
+                            Пожарная часть 
+                        </Text> 
                     </View>
                     <View style={styles.listWrap}>
                         <Text style={styles.listText} > 
-                            112    
+                            102
                          </Text>
                         <Text style={styles.listText}>
-                            Служба газа
+                            Полиция
                         </Text>
                     </View>
                     <View style={styles.listWrap}>
@@ -36,26 +36,18 @@ export default class EmergencyCalls extends Component {
                     </View>
                     <View style={styles.listWrap}>
                         <Text style={styles.listText} > 
-                            102
-                         </Text>
-                        <Text style={styles.listText}>
-                            Полиция
-                        </Text>
-                    </View>
-                    <View style={styles.listWrap}>
-                        <Text style={styles.listText} > 
-                            101
-                         </Text>
-                        <Text style={styles.listText}>
-                            Пожарная часть 
-                        </Text>
-                    </View>
-                    <View style={styles.listWrap}>
-                        <Text style={styles.listText} > 
                             109
                          </Text>
                         <Text style={styles.listText}>
-                            Единый контакт-центр Aikey акимата г.Тараза
+                            Единый контакт-центр акимата г.Тараз
+                        </Text>
+                    </View>
+                    <View style={styles.listWrap}>
+                        <Text style={styles.listText} > 
+                            112    
+                         </Text>
+                        <Text style={styles.listText}>
+                            Служба газа
                         </Text>
                     </View>
                     <View style={styles.listWrap}>
@@ -64,6 +56,14 @@ export default class EmergencyCalls extends Component {
                          </Text>
                             <Text style={styles.listText}>
                            Горячая линия по вопросам ЧП
+                        </Text>
+                    </View>
+                    <View style={styles.listWrap}>
+                        <Text style={styles.listText} > 
+                            1406 
+                         </Text>
+                        <Text style={styles.listText}>
+                            Call-центр ФОМС
                         </Text>
                     </View>
                 </View>
